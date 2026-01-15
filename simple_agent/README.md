@@ -17,11 +17,11 @@ poetry install
 ## Run
 
 ```bash
-GOOGLE_API_KEY="your-key" poetry run python 1_simple_agent/simple_agent.py
+GOOGLE_API_KEY="your-key" poetry run adk web simple_agent
 ```
 
 ## What this does
 
-- Creates a single `Agent` with a short instruction
-- Uses `InMemoryRunner` for a quick debug run
-- Sends one user prompt and prints the response to the console
+- Creates a single `root_agent` with a short instruction
+- Exposes `agent.py` so `adk web` can load the agent module
+- Lets you chat with the agent in the web UI
