@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "google-adk-tuto"
+version = "0.1.0"
+description = ""
+authors = ["Marcos Jacinto <marcos.jacinto@geowellex.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+google-adk = "^1.22.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
