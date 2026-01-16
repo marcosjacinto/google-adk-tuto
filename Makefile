@@ -1,10 +1,10 @@
-.PHONY: build up down logs restart manual-session manual-session-logs persistent-session persistent-session-logs
+.PHONY: build up down logs restart manual-session manual-session-logs build-persistent run-persistent persistent-logs
 
 build:
 	docker compose build
 
 up:
-	docker compose up --build
+	docker compose up adk --build
 
 down:
 	docker compose down
