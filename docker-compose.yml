@@ -5,3 +5,21 @@ services:
       - "8000:8000"
     env_file:
       - .env
+    environment:
+      GOOGLE_CLOUD_PROJECT: geox-cloud-validacao
+      GOOGLE_CLOUD_LOCATION: us-central1
+      GOOGLE_APPLICATION_CREDENTIALS: /app/credentials.json
+    volumes:
+      - ${GCP_CREDENTIALS_PATH}:/app/credentials.json:ro
+  manual-session:
+    build:
+      context: .
+      dockerfile: Dockerfile.manual_session
+    env_file:
+      - .env
+    environment:
+      GOOGLE_CLOUD_PROJECT: geox-cloud-validacao
+      GOOGLE_CLOUD_LOCATION: us-central1
+      GOOGLE_APPLICATION_CREDENTIALS: /app/credentials.json
+    volumes:
+      - ${GCP_CREDENTIALS_PATH}:/app/credentials.json:ro
