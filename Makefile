@@ -1,4 +1,4 @@
-.PHONY: build up down logs restart manual-session manual-session-logs
+.PHONY: build up down logs restart manual-session manual-session-logs persistent-session persistent-session-logs
 
 build:
 	docker compose build
@@ -21,3 +21,12 @@ manual-session:
 
 manual-session-logs:
 	docker compose logs -f manual-session
+
+build-persistent:
+	docker compose build persistent-session
+
+run-persistent:
+	docker compose run --rm -it persistent-session
+
+persistent-logs:
+	docker compose logs -f persistent-session

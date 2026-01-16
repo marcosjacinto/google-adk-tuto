@@ -23,3 +23,17 @@ services:
       GOOGLE_APPLICATION_CREDENTIALS: /app/credentials.json
     volumes:
       - ${GCP_CREDENTIALS_PATH}:/app/credentials.json:ro
+  persistent-session:
+    build:
+      context: .
+      dockerfile: Dockerfile.persistent_session
+    env_file:
+      - .env
+    environment:
+      GOOGLE_CLOUD_PROJECT: geox-cloud-validacao
+      GOOGLE_CLOUD_LOCATION: us-central1
+      GOOGLE_APPLICATION_CREDENTIALS: /app/credentials.json
+      ADK_SQLITE_PATH: /app/data/sessions.db
+    volumes:
+      - ${GCP_CREDENTIALS_PATH}:/app/credentials.json:ro
+      - ${ADK_SQLITE_VOLUME_PATH:-./data}:/app/data
