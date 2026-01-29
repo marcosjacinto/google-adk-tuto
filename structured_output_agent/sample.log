@@ -1,0 +1,8 @@
+2026-02-03T14:18:41Z INFO api-gateway request_id=9a1c2f33 method=POST path=/v2/payments status=500 latency_ms=912
+2026-02-03T14:18:41Z ERROR payments-service request_id=9a1c2f33 error="PermissionError: missing scope payments.write" region=eu-west-1
+2026-02-03T14:18:42Z ERROR payments-service request_id=9a1c2f33 Traceback (most recent call last):
+2026-02-03T14:18:42Z ERROR payments-service request_id=9a1c2f33   File "payments.py", line 58, in capture
+2026-02-03T14:18:42Z ERROR payments-service request_id=9a1c2f33     authorize_payment(payload)
+2026-02-03T14:18:42Z ERROR payments-service request_id=9a1c2f33 PermissionError: missing scope payments.write
+2026-02-03T14:18:45Z WARN billing-service request_id=9a1c2f33 msg="payment retries exhausted" attempts=3
+2026-02-03T14:18:50Z INFO api-gateway request_id=9a1c2f33 msg="returning error to client" status=502
